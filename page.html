@@ -2,154 +2,272 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<title>The World in a Day — 22 November 2026</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   html,body { width:1024px; height:1024px; overflow:hidden; }
   body {
-    font-family: Georgia, 'DejaVu Serif', 'Times New Roman', serif;
-    background:#f6f2e9; color:#141414;
-    padding:18px 24px 12px 24px;
+    font-family: 'DejaVu Serif', Georgia, 'Times New Roman', serif;
+    background:#f5f1e6; color:#16161a;
+    padding:14px 22px 10px 22px;
     display:flex; flex-direction:column;
   }
-  .rule { height:5px; background:#141414; }
-  .rule.thin { height:2px; }
-  .rule.red { background:#b01e23; }
+  .rule { height:6px; background:#16161a; }
+  .rule.red { height:3px; background:#b3121b; }
+  .rule.thin { height:1px; background:#16161a; opacity:.55; }
 
-  /* Masthead */
-  .masthead { text-align:center; padding:5px 0 7px 0; }
+  /* ---- masthead ---- */
+  .masthead { text-align:center; padding:6px 0 6px 0; }
+  .masthead .kicker {
+    font-family:'DejaVu Sans', Arial, sans-serif;
+    font-size:15px; letter-spacing:7px; text-transform:uppercase; color:#55524c;
+  }
   .masthead .title {
-    font-size:46px; font-weight:bold; letter-spacing:6px; line-height:1.05;
+    font-size:50px; font-weight:bold; letter-spacing:4px; line-height:1.02; margin-top:1px;
   }
   .masthead .date {
-    font-size:46px; font-weight:bold; color:#b01e23; letter-spacing:2px;
-    margin-top:3px;
+    font-family:'DejaVu Sans', Arial, sans-serif;
+    font-size:47px; font-weight:bold; color:#b3121b; letter-spacing:1px; margin-top:2px;
   }
-  .masthead .tag {
-    font-size:16px; color:#555; letter-spacing:3px; margin-top:2px;
-    font-family:'DejaVu Sans', Arial, sans-serif; text-transform:uppercase;
-  }
+  .masthead .date span { color:#16161a; }
 
-  /* Hero */
+  /* ---- hero ---- */
   .hero {
-    display:flex; margin-top:10px; padding:12px 16px 10px 16px;
-    background:#fffdf6; border:2px solid #141414;
-    align-items:center; gap:18px;
+    display:flex; gap:16px; margin-top:9px;
+    background:#fffdf5; border:2px solid #16161a; padding:10px 14px 10px 16px;
+    align-items:center;
   }
-  .hero .left { flex:1.2; }
-  .kicker {
+  .hero .txt { flex:1 1 58%; }
+  .hero .art { flex:0 0 34%; text-align:center; }
+  .tag {
+    display:inline-block; background:#b3121b; color:#fffdf5;
     font-family:'DejaVu Sans', Arial, sans-serif;
-    font-size:17px; font-weight:bold; color:#b01e23; letter-spacing:3px;
-    text-transform:uppercase; margin-bottom:5px;
+    font-size:14px; font-weight:bold; letter-spacing:2px; text-transform:uppercase;
+    padding:2px 8px; margin-bottom:6px;
   }
-  .hero h1 { font-size:37px; line-height:1.08; font-weight:bold; }
-  .hero .sub { font-size:19px; color:#333; margin-top:7px; line-height:1.26; }
-  .hero .right { flex:1; text-align:center; }
-  .hero .right .big {
-    font-size:54px; font-weight:bold; color:#b01e23; line-height:1;
-    font-family:'DejaVu Sans', Arial, sans-serif;
+  .hero h1 { font-size:36px; line-height:1.06; font-weight:bold; }
+  .hero h1 em { color:#b3121b; font-style:normal; }
+  .hero .sub { font-size:18px; color:#333; margin-top:7px; line-height:1.28; }
+  .hero .src {
+    font-family:'DejaVu Sans', Arial, sans-serif; font-size:13px; color:#6a675f;
+    letter-spacing:1px; margin-top:7px; text-transform:uppercase;
   }
-  .hero .right .lbl {
-    font-size:19px; color:#333; font-family:'DejaVu Sans', Arial, sans-serif;
-    margin-top:4px; letter-spacing:1px;
+  .hero .art .fig {
+    font-family:'DejaVu Sans', Arial, sans-serif; font-size:14px; letter-spacing:2px;
+    color:#333; margin-top:2px; text-transform:uppercase;
   }
-  svg { display:block; margin:6px auto 0 auto; }
+  .hero .art .word {
+    font-family:'DejaVu Sans', Arial, sans-serif; font-weight:bold; font-size:30px;
+    color:#b3121b; letter-spacing:1px; margin-top:3px; line-height:1;
+  }
+  svg { display:block; margin:0 auto; }
 
-  /* Grid */
+  /* ---- grid ---- */
   .grid {
-    flex:1; display:grid; grid-template-columns:1fr 1fr 1fr;
-    grid-template-rows:1fr 1fr; gap:10px; margin-top:12px;
-    min-height:0;
+    flex:1 1 auto; display:grid; grid-template-columns:1fr 1fr 1fr;
+    grid-template-rows:1fr 1fr; gap:9px; margin-top:10px; min-height:0;
   }
   .card {
-    background:#fffdf6; border:2px solid #141414; padding:10px 12px 8px 12px;
+    background:#fffdf5; border:2px solid #16161a; padding:8px 10px 7px 10px;
     display:flex; flex-direction:column; min-height:0; overflow:hidden;
   }
-  .card .emoji { font-size:40px; line-height:1; margin-bottom:4px; }
-  .card h2 { font-size:25px; line-height:1.1; font-weight:bold; }
-  .card .sub { font-size:16px; color:#444; margin-top:5px; line-height:1.22; }
+  .card .row { display:flex; align-items:center; gap:7px; }
+  .card .glyph { flex:0 0 auto; width:40px; height:40px; }
+  .card .kicker {
+    font-family:'DejaVu Sans', Arial, sans-serif; font-size:11.5px; font-weight:bold;
+    color:#b3121b; letter-spacing:1.4px; text-transform:uppercase; line-height:1.15;
+  }
+  .card h2 { font-size:25px; line-height:1.05; font-weight:bold; margin-top:4px; }
+  .card h2 b { color:#b3121b; }
+  .card .sub { font-size:14px; color:#3b3a35; margin-top:4px; line-height:1.2; }
+  .card .stat {
+    margin-top:auto; font-family:'DejaVu Sans', Arial, sans-serif; font-weight:bold;
+    font-size:18px; color:#16161a; border-top:1px solid #cfcabc; padding-top:3px;
+  }
+  .card .stat.up { color:#1a7a3c; }
+  .card .stat.down { color:#b3121b; }
 
-  /* Footer */
+  /* ---- footer ---- */
   .foot {
-    margin-top:10px; background:#141414; color:#f6f2e9;
-    text-align:center; padding:7px 0; font-size:18px; letter-spacing:3px;
-    font-family:'DejaVu Sans', Arial, sans-serif; font-weight:bold;
+    margin-top:9px; background:#16161a; color:#f5f1e6;
+    text-align:center; padding:6px 0; font-size:15px; letter-spacing:1.2px;
+    font-family:'DejaVu Sans', Arial, sans-serif; font-weight:bold; white-space:nowrap;
   }
 </style>
 </head>
 <body>
+
   <div class="rule"></div>
   <div class="masthead">
-    <div class="title">THE WORLD IN A DAY</div>
-    <div class="date">22 November 2026</div>
-    <div class="tag">Sunday &middot; One day's news in one image</div>
+    <div class="kicker">The World in a Day &middot; Sunday Edition</div>
+    <div class="title">WORLD NEWS FRONT PAGE</div>
+    <div class="date">22 <span>NOVEMBER</span> 2026</div>
   </div>
   <div class="rule red"></div>
   <div class="rule thin" style="margin-top:2px;"></div>
 
-  <!-- HERO: Iran strikes US bases in Bahrain -->
+  <!-- ===== HERO : QRAM quantum memory chip ===== -->
   <div class="hero">
-    <div class="left">
-      <div class="kicker">Middle East &middot; Escalation</div>
-      <h1>Iran strikes two U.S. bases in Bahrain</h1>
-      <div class="sub">IRGC missiles and drones hit Patriot radars at Rifa and Awali. Bahrain says a civilian facility was also hit. Trump: a "permanent deal" is close; Qatar mediates.</div>
+    <div class="txt">
+      <div class="tag">Science &middot; World First</div>
+      <h1>Quantum memory: Zhejiang University builds world&rsquo;s first <em>QRAM</em> chip</h1>
+      <div class="sub">&ldquo;Tianmu-2&rdquo; gives quantum computers a high-speed random access memory &mdash; the first physical realisation of QRAM, published in <i>Nature Physics</i>.</div>
+      <div class="src">Zhejiang University &middot; Nature Physics &middot; 22 Nov 2026</div>
     </div>
-    <div class="right">
-      <svg width="150" height="120" viewBox="0 0 150 120">
-        <!-- missile silhouette -->
-        <g fill="#b01e23">
-          <path d="M75 8 L90 30 L90 80 L84 92 L66 92 L60 80 L60 30 Z"/>
-          <circle cx="75" cy="26" r="7" fill="#f6f2e9"/>
-          <path d="M60 70 L40 95 L60 88 Z"/>
-          <path d="M90 70 L110 95 L90 88 Z"/>
-          <rect x="66" y="92" width="18" height="14" rx="3"/>
+    <div class="art">
+      <svg width="288" height="164" viewBox="0 0 288 164" role="img" aria-label="QRAM quantum memory chip">
+        <defs>
+          <linearGradient id="chipg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#2b3f8f"/>
+            <stop offset="55%" stop-color="#1b2350"/>
+            <stop offset="100%" stop-color="#0d1130"/>
+          </linearGradient>
+          <radialGradient id="glow" cx="50%" cy="45%" r="60%">
+            <stop offset="0%" stop-color="#7fe7ff" stop-opacity="0.95"/>
+            <stop offset="55%" stop-color="#2f8fd6" stop-opacity="0.30"/>
+            <stop offset="100%" stop-color="#2f8fd6" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <!-- pins -->
+        <g stroke="#16161a" stroke-width="2.4">
+          <path d="M28 26 h-14 M28 50 h-14 M28 74 h-14 M28 98 h-14 M28 122 h-14 M260 26 h14 M260 50 h14 M260 74 h14 M260 98 h14 M260 122 h14"/>
+          <path d="M64 12 v-10 M104 12 v-10 M144 12 v-10 M184 12 v-10 M224 12 v-10 M64 140 v14 M104 140 v14 M144 140 v14 M184 140 v14 M224 140 v14"/>
         </g>
-        <!-- explosion bursts -->
-        <g fill="#e8a020">
-          <circle cx="30" cy="30" r="10"/>
-          <circle cx="120" cy="40" r="8"/>
-          <circle cx="22" cy="70" r="6"/>
+        <!-- chip body -->
+        <rect x="28" y="12" width="232" height="128" rx="8" fill="url(#chipg)" stroke="#16161a" stroke-width="3"/>
+        <rect x="46" y="28" width="196" height="96" rx="5" fill="#0a1b33" stroke="#7fe7ff" stroke-width="1.6" opacity="0.95"/>
+        <!-- quantum lattice -->
+        <g stroke="#7fe7ff" stroke-width="1.5" opacity="0.85">
+          <path d="M66 46 H222 M66 66 H222 M66 86 H222 M66 106 H222"/>
+          <path d="M86 38 V114 M126 38 V114 M166 38 V114 M206 38 V114"/>
         </g>
-        <text x="75" y="112" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="13" font-weight="bold" fill="#141414">RIFA &middot; AWALI BASES</text>
+        <g fill="#b9f2ff">
+          <circle cx="86" cy="46" r="3.4"/><circle cx="126" cy="46" r="3.4"/>
+          <circle cx="166" cy="46" r="3.4"/><circle cx="206" cy="46" r="3.4"/>
+          <circle cx="86" cy="66" r="3.4"/><circle cx="206" cy="66" r="3.4"/>
+          <circle cx="126" cy="86" r="3.4"/><circle cx="166" cy="86" r="3.4"/>
+          <circle cx="86" cy="106" r="3.4"/><circle cx="206" cy="106" r="3.4"/>
+        </g>
+        <!-- highlighted access path -->
+        <path d="M86 106 H166 V66 H206" stroke="#ffd24d" stroke-width="3" fill="none"/>
+        <circle cx="166" cy="86" r="6.5" fill="#ffd24d"/>
+        <circle cx="166" cy="86" r="11" fill="none" stroke="#ffd24d" stroke-width="1.6" opacity="0.8"/>
+        <!-- glow -->
+        <ellipse cx="144" cy="76" rx="120" ry="80" fill="url(#glow)" opacity="0.55"/>
+        <text x="144" y="132" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="15" font-weight="bold" fill="#9fe9ff" letter-spacing="3">TIANMU-2 &#183; QRAM</text>
       </svg>
-      <div class="big">2 BASES HIT</div>
-      <div class="lbl">Patriot radars targeted</div>
+      <div class="word">FIRST EVER</div>
+      <div class="fig">quantum random access memory</div>
     </div>
   </div>
 
-  <!-- GRID: 6 stories -->
+  <!-- ===== GRID : six stories ===== -->
   <div class="grid">
+
     <div class="card">
-      <div class="emoji">&#x1F91D;</div>
-      <h2>Trump&ndash;Xi&ndash;Putin summit in China</h2>
-      <div class="sub">First trilateral leaders' summit draws global praise as a step toward great-power stability.</div>
+      <div class="row">
+        <svg class="glyph" viewBox="0 0 48 48" aria-label="5G factory">
+          <rect x="3" y="26" width="16" height="18" fill="#16161a"/>
+          <rect x="22" y="18" width="16" height="26" fill="#b3121b"/>
+          <rect x="41" y="30" width="5" height="14" fill="#16161a"/>
+          <path d="M7 20 l6-8 6 8 z" fill="#1a7a3c"/>
+          <g stroke="#1a7a3c" stroke-width="2.4" fill="none">
+            <path d="M33 12 a9 9 0 0 1 8 9"/>
+            <path d="M33 5 a16 16 0 0 1 15 16"/>
+          </g>
+          <circle cx="30" cy="21" r="3" fill="#1a7a3c"/>
+        </svg>
+        <div class="kicker">Industry &middot; China</div>
+      </div>
+      <h2>5G + industrial internet passes <b>27,000</b> projects</h2>
+      <div class="sub">MIIT reports 1,260 5G factories, 360+ industrial internet platforms and 100 million+ connected industrial devices.</div>
+      <div class="stat">27,000 PROJECTS</div>
     </div>
+
     <div class="card">
-      <div class="emoji">&#x1F680;</div>
-      <h2>Shenzhou-24 set for launch</h2>
-      <div class="sub">Final full rehearsal complete at the launch site; crewed flight to lift off within days.</div>
+      <div class="row">
+        <svg class="glyph" viewBox="0 0 48 48" aria-label="Rocket on launch pad">
+          <rect x="4" y="40" width="40" height="5" fill="#16161a"/>
+          <path d="M24 3 c7 8 8 18 8 26 h-16 c0-8 1-18 8-26 z" fill="#fffdf5" stroke="#16161a" stroke-width="2.2"/>
+          <circle cx="24" cy="18" r="3.6" fill="#b3121b"/>
+          <path d="M16 30 l-6 8 6 -1 z M32 30 l6 8 -6 -1 z" fill="#b3121b"/>
+          <path d="M21 33 q3 8 6 0" fill="#ffd24d"/>
+        </svg>
+        <div class="kicker">Space &middot; China</div>
+      </div>
+      <h2><b>Shenzhou-24</b> crewed mission reaches the launch pad</h2>
+      <div class="sub">Rocket and spacecraft rolled out to the pad; a full-system rehearsal was held on 21 November.</div>
+      <div class="stat">LAUNCH WITHIN DAYS</div>
     </div>
+
     <div class="card">
-      <div class="emoji">&#x1F4B0;</div>
-      <h2>Bitcoin breaks $60,000</h2>
-      <div class="sub">Up 2.5% on the day; Ethereum clears $1,700 as crypto markets rally worldwide.</div>
+      <div class="row">
+        <svg class="glyph" viewBox="0 0 48 48" aria-label="Falling chip chart">
+          <rect x="4" y="6" width="16" height="14" fill="#16161a"/>
+          <g stroke="#16161a" stroke-width="1.6">
+            <path d="M4 26 h40 M4 36 h40 M4 46 h40"/>
+          </g>
+          <path d="M6 12 L20 24 L28 30 L44 44" fill="none" stroke="#b3121b" stroke-width="3.4" stroke-linecap="round"/>
+          <path d="M36 34 L44 44 L34 43 z" fill="#b3121b"/>
+        </svg>
+        <div class="kicker">Markets &middot; US</div>
+      </div>
+      <h2>Nvidia sheds <b>14%</b> in a day after an SEC accounting probe</h2>
+      <div class="sub">Stock closed at $125.50, near half its October high of $243.40; a week of losses wiped about $900bn in value.</div>
+      <div class="stat down">&minus;14% IN ONE DAY</div>
     </div>
+
     <div class="card">
-      <div class="emoji">&#x2695;&#xFE0F;</div>
-      <h2>Congo Ebola deaths pass 5,600</h2>
-      <div class="sub">The DRC outbreak's toll crosses a grim milestone as response teams race to contain spread.</div>
+      <div class="row">
+        <svg class="glyph" viewBox="0 0 48 48" aria-label="Bitcoin coin">
+          <circle cx="24" cy="24" r="19" fill="#ffd24d" stroke="#16161a" stroke-width="2.2"/>
+          <text x="24" y="34" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="24" font-weight="bold" fill="#16161a">&#8383;</text>
+          <path d="M32 12 l8 6 -8 6" fill="none" stroke="#1a7a3c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="kicker">Crypto &middot; Global</div>
+      </div>
+      <h2>Bitcoin breaks <b>$60,000</b> as Ethereum clears $1,700</h2>
+      <div class="sub">Bitcoin rose about 2.5% on the day in a broad, calm advance for crypto majors.</div>
+      <div class="stat up">$60,000 AND ABOVE</div>
     </div>
+
     <div class="card">
-      <div class="emoji">&#x1F46E;</div>
-      <h2>Mexico nabs "Chapo Isidro"</h2>
-      <div class="sub">FBI ten-most-wanted drug lord Fausto Isidro Meza-Flores captured by special forces in Sinaloa.</div>
+      <div class="row">
+        <svg class="glyph" viewBox="0 0 48 48" aria-label="Speed skater on ice">
+          <ellipse cx="24" cy="41" rx="21" ry="5" fill="#dfeaf2"/>
+          <circle cx="18" cy="12" r="4.6" fill="#16161a"/>
+          <path d="M18 17 L26 25 L19 32" stroke="#b3121b" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M26 25 L36 29" stroke="#16161a" stroke-width="3.4" stroke-linecap="round"/>
+          <path d="M19 32 L31 35" stroke="#16161a" stroke-width="3.4" stroke-linecap="round"/>
+          <path d="M14 22 L6 16" stroke="#16161a" stroke-width="2.6" stroke-linecap="round"/>
+        </svg>
+        <div class="kicker">Sport &middot; Seoul &amp; Milan</div>
+      </div>
+      <h2>China wins short-track relay gold; <b>Ning Zhongyan</b> sets a course record</h2>
+      <div class="sub">Women&rsquo;s 3,000m relay won the season&rsquo;s first World Tour title; Ning took the men&rsquo;s 1,500m in 1:43.587.</div>
+      <div class="stat">GOLD &middot; 1:43.587</div>
     </div>
+
     <div class="card">
-      <div class="emoji">&#x26F7;&#xFE0F;</div>
-      <h2>China takes short-track gold</h2>
-      <div class="sub">Women's 3,000 m relay wins at the Seoul World Tour stop; Ning Zhongyan takes 1,500 m speed skating gold.</div>
+      <div class="row">
+        <svg class="glyph" viewBox="0 0 48 48" aria-label="APEC Pacific connections">
+          <path d="M8 34 C18 16 30 16 40 34" fill="none" stroke="#b3121b" stroke-width="2.4"/>
+          <path d="M8 34 C18 22 30 22 40 34" fill="none" stroke="#1a7a3c" stroke-width="2.4"/>
+          <circle cx="8" cy="34" r="4.4" fill="#16161a"/>
+          <circle cx="40" cy="34" r="4.4" fill="#16161a"/>
+          <circle cx="24" cy="15" r="4.4" fill="#b3121b"/>
+        </svg>
+        <div class="kicker">Diplomacy &middot; Asia-Pacific</div>
+      </div>
+      <h2><b>APEC</b> week closes in China, with innovation and green energy deals</h2>
+      <div class="sub">&ldquo;Building pillars of innovation&rdquo; named a key element; firms signed green energy, storage and materials deals.</div>
+      <div class="stat">2026 LEADERS&rsquo; MEETING</div>
     </div>
+
   </div>
 
-  <div class="foot">IRAN STRIKES BAHRAIN BASES &middot; GREAT-POWER SUMMIT &middot; SHENZHOU-24 &middot; BITCOIN $60K</div>
+  <div class="foot">
+    QRAM &middot; 27,000 5G PROJECTS &middot; SHENZHOU-24 &middot; NVIDIA &minus;14% &middot; BTC $60K &middot; SKATING GOLD &middot; APEC
+  </div>
 </body>
 </html>
